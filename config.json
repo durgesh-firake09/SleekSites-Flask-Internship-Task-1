@@ -1,6 +1,7 @@
 {
     "params": {
         "username": "Durgesh",
-        "password": "Durgesh"
+        "password": "Durgesh",
+        "secret-key":"729si@nfosi0902"
     }
 }

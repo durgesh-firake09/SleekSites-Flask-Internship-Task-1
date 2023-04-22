@@ -4,16 +4,17 @@ import jwt
 
 app = Flask(__name__)
 
-app.config['SECRET-KEY'] = "aosoaoasisaoos64"
 with open('config.json','r') as c:
     params = json.load(c)['params']
+    
+app.config['SECRET-KEY'] = params['secret-key']
 
 def isLoggedIn():
     try:
         token = request.cookies.get('token')
         payload = jwt.decode(token, app.config['SECRET-KEY'],algorithms=['HS256'])
-        if payload['username'] == 'Durgesh' and payload['password'] == 'Durgesh':
-            print(payload)
+        if payload['username'] == params['username'] and payload['password'] == params['password']:
+            # print(payload)
             return True
     except Exception as e:
         return False
