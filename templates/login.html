@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            margin: 30px auto;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            width: 40%;
+        }
+
+        h2{
+            text-align: center;
+            margin: 20px;
+        }
+
+        .login-form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            /* align-items: center; */
+            justify-content: space-between;
+            margin: 20px auto;
+        }
+
+        .form-item{
+            justify-content: space-evenly;
+            display: flex;
+            margin: 20px;
+            align-items: center;
+            font-size: 17px;
+        }
+
+        input
+        {
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .button{
+            margin: 20px auto;
+            width: 20%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <hr>
+        <form action="/login" method="POST" class="login-form">
+            <div class="form-item">
+                <label for="username">Username :</label>
+                <input type="text" name="username" id="username" placeholder="Enter Your Username">
+            </div>
+            <div class="form-item">
+                <label for="password">Password :</label>
+                <input type="password" name="password" id="password" placeholder="Enter Your Password">
+            </div>
+            <hr>
+            <input type="submit" class="button" value="Login">
+        </form>
+    </div>
+</body>
+
+</html>
