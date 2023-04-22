@@ -1,9 +1,12 @@
 from flask import Flask, redirect, render_template, request,jsonify
+import json
 import jwt
 
 app = Flask(__name__)
 
 app.config['SECRET-KEY'] = "aosoaoasisaoos64"
+with open('config.json','r') as c:
+    params = json.load(c)['params']
 
 def isLoggedIn():
     try:
@@ -29,7 +32,7 @@ def login():
         username = request.form['username']
         password = request.form['password']
         # print(username,password)
-        if(username=="Durgesh" and password=="Durgesh"):
+        if(username==params['username'] and password==params['password']):
             token = jwt.encode({
                 'username':username,
                 'password':password
